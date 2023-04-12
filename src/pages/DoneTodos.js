@@ -3,10 +3,11 @@ import { DataContext } from "../contexts/DataProvider";
 import { NavLink } from "react-router-dom";
 
 export function DoneTodos() {
-  const { todos } = useContext(DataContext);
+  const { todos, totalDoneTodos } = useContext(DataContext);
   return (
     <>
       <h1>This is done - todos</h1>
+      <p>Items: {totalDoneTodos}</p>
       {todos.map((todo) => {
         const { id, title, description, isCompleted } = todo;
 
